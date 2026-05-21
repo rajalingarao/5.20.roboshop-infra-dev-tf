@@ -1,1 +1,3 @@
-# 5.20.roboshop-infra-dev-tf
+# Roboshop VM Architecture
+
+![alt text](roboshop-infra-dev.svg)
