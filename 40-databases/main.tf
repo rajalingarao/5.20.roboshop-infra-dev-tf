@@ -1,3 +1,4 @@
+#MongoDB instance
 resource "aws_instance" "mongodb" {
   ami           = local.ami_id
   instance_type = "t3.micro"
@@ -37,6 +38,7 @@ resource "terraform_data" "mongodb" {
   }
 }
 
+#Redis instance
 resource "aws_instance" "redis" {
   ami           = local.ami_id
   instance_type = "t3.micro"
@@ -76,6 +78,7 @@ resource "terraform_data" "redis" {
   }
 }
 
+#MySQL instance
 resource "aws_instance" "mysql" {
   ami           = local.ami_id
   instance_type = "t3.micro"
@@ -115,6 +118,7 @@ resource "terraform_data" "mysql" {
   }
 }
 
+#Rabbitmq instance
 resource "aws_instance" "rabbitmq" {
   ami           = local.ami_id
   instance_type = "t3.micro"
@@ -156,7 +160,7 @@ resource "terraform_data" "rabbitmq" {
 
 resource "aws_route53_record" "mongodb" {
   zone_id = var.zone_id
-  name    = "mongodb-${var.environment}.${var.zone_name}" #mongodb-dev.daws84s.site
+  name    = "mongodb-${var.environment}.${var.zone_name}" #mongodb-dev.lithesh.shop
   type    = "A"
   ttl     = 1
   records = [aws_instance.mongodb.private_ip]

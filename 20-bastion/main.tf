@@ -18,3 +18,14 @@ resource "aws_instance" "bastion" {
     }
   )
 }
+
+resource "aws_route53_record" "bastion_instance_r53" {
+    zone_id = var.zone_id
+    name    = "bastion.${var.domain_name}"
+    type    = "A"
+    ttl     = 1
+    records = [aws_instance.bastion.public_ip]
+    allow_overwrite = true
+}
+
+

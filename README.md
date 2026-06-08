@@ -31,6 +31,13 @@ for i in 00-vpc/ 10-sg/ 20-bastion/ 30-vpn/ 40-databases/ 50-backend-alb/ 60-acm
 for i in 00-vpc/ 10-sg/ 20-bastion/ 30-vpn/ 40-databases/ 50-backend-alb/ 60-acm/ 70-catalogue/ 80-frontend-alb/ 90-user/ 100-components/ 110-cdn ; do cd $i; terraform plan; cd .. ; done 
 ```
 
+
+```
+for i in 00-vpc/ 10-sg/ 20-bastion/ 30-vpn/; do cd $i; terraform apply -auto-approve; cd .. ; done 
+```
+
+
+
 ```
 for i in 00-vpc/ 10-sg/ 20-bastion/ 30-vpn/ 40-databases/ 50-backend-alb/ 60-acm/ 70-catalogue/ 80-frontend-alb/ 90-user/ 100-components/ 110-cdn ; do cd $i; terraform apply -auto-approve; cd .. ; done 
 ```
